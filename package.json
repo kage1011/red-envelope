@@ -1,0 +1,19 @@
+{
+  "name": "red-envelope-tet-2027",
+  "version": "1.0.0",
+  "description": "Web Lì Xì & Bàn Tiệc Tết Đinh Mùi 2027 - Hoạt động Offline 100%",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "tet2027",
+    "red-envelope",
+    "li-xi",
+    "party-game",
+    "drinking-game",
+    "offline"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}

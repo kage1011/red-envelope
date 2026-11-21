@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Lì Xì Tết Đinh Mùi 2027 - Vạn Lộc Khai Xuân (UI/UX Pro Max Edition)</title>
+  
+  <!-- DESIGN TOKENS ARCHITECTURE (UI/UX PRO MAX) -->
+  <link rel="stylesheet" href="css/tokens.css?v=2027">
+  <!-- CSS OFFLINE 100% -->
+  <link rel="stylesheet" href="css/style.css?v=2027">
+</head>
+<body>
+  <!-- Canvas pháo hoa & cánh hoa mai đào rơi toàn màn hình -->
+  <canvas id="canvas-confetti"></canvas>
+
+  <!-- LỒNG ĐÈN ĐỎ ĐUNG ĐƯA 2 GÓC TRÊN MÀN HÌNH (SVG INLINE OFFLINE) -->
+  <div class="lantern-wrapper lantern-left">
+    <svg width="60" height="120" viewBox="0 0 60 120" fill="none">
+      <line x1="30" y1="0" x2="30" y2="25" stroke="#f59e0b" stroke-width="2" />
+      <ellipse cx="30" cy="55" rx="24" ry="30" fill="#dc2626" stroke="#fbbf24" stroke-width="2.5" />
+      <path d="M 16 35 Q 30 55 16 75 M 44 35 Q 30 55 44 75" stroke="#fbbf24" stroke-width="1.5" fill="none" />
+      <line x1="30" y1="25" x2="30" y2="85" stroke="#fbbf24" stroke-width="2" />
+      <rect x="22" y="85" width="16" height="5" fill="#f59e0b" rx="2" />
+      <line x1="26" y1="90" x2="26" y2="115" stroke="#dc2626" stroke-width="2" />
+      <line x1="30" y1="90" x2="30" y2="120" stroke="#f59e0b" stroke-width="2" />
+      <line x1="34" y1="90" x2="34" y2="115" stroke="#dc2626" stroke-width="2" />
+    </svg>
+  </div>
+
+  <div class="lantern-wrapper lantern-right">
+    <svg width="60" height="120" viewBox="0 0 60 120" fill="none">
+      <line x1="30" y1="0" x2="30" y2="25" stroke="#f59e0b" stroke-width="2" />
+      <ellipse cx="30" cy="55" rx="24" ry="30" fill="#dc2626" stroke="#fbbf24" stroke-width="2.5" />
+      <path d="M 16 35 Q 30 55 16 75 M 44 35 Q 30 55 44 75" stroke="#fbbf24" stroke-width="1.5" fill="none" />
+      <line x1="30" y1="25" x2="30" y2="85" stroke="#fbbf24" stroke-width="2" />
+      <rect x="22" y="85" width="16" height="5" fill="#f59e0b" rx="2" />
+      <line x1="26" y1="90" x2="26" y2="115" stroke="#dc2626" stroke-width="2" />
+      <line x1="30" y1="90" x2="30" y2="120" stroke="#f59e0b" stroke-width="2" />
+      <line x1="34" y1="90" x2="34" y2="115" stroke="#dc2626" stroke-width="2" />
+    </svg>
+  </div>
+
+  <!-- CÂU ĐỐI TẾT ĐINH MÙI 2027 HAI BÊN RÌA (DESKTOP) -->
+  <div class="couplet-banner couplet-left">
+    ĐINH<br/>MÙI<br/>VẠN<br/>LỘC<br/>✦<br/>KHAI<br/>XUÂN<br/>NHƯ<br/>Ý
+  </div>
+  <div class="couplet-banner couplet-right">
+    BÀN<br/>TIỆC<br/>RƯỢU<br/>SAY<br/>✦<br/>LÌ<br/>XÌ<br/>TRAO<br/>TAY
+  </div>
+
+  <!-- Floating Island Header Navbar -->
+  <div id="app-navbar"></div>
+
+  <!-- Live Ticker Neon -->
+  <div id="app-ticker"></div>
+
+  <!-- Main View Container -->
+  <main id="app-main"></main>
+
+  <!-- SCRIPTS HỆ THỐNG OFFLINE 100% (ANTI-CACHE VERSIONING) -->
+  <script src="js/audio.js?v=2027"></script>
+  <script src="js/confetti.js?v=2027"></script>
+  <script src="js/state.js?v=2027"></script>
+  <script src="js/components/icons.js?v=2027"></script>
+  <script src="js/components/carousel.js?v=2027"></script>
+  <script src="js/components/navbar.js?v=2027"></script>
+  <script src="js/components/ticker.js?v=2027"></script>
+  <script src="js/pages/home.js?v=2027"></script>
+  <script src="js/pages/game1.js?v=2027"></script>
+  <script src="js/pages/game2.js?v=2027"></script>
+  <script src="js/pages/game3.js?v=2027"></script>
+  <script src="js/pages/gameBonus.js?v=2027"></script>
+  <script src="js/pages/admin.js?v=2027"></script>
+
+  <!-- CLIENT-SIDE ROUTER -->
+  <script>
+    function navigate() {
+      const hash = window.location.hash || '#/';
+      const navEl = document.getElementById('app-navbar');
+      const tickerEl = document.getElementById('app-ticker');
+      const mainEl = document.getElementById('app-main');
+
+      if (navEl) navEl.innerHTML = renderNavbar();
+      if (tickerEl) tickerEl.innerHTML = renderTicker();
+
+      window.scrollTo(0, 0);
+
+      if (hash === '#/' || hash === '') {
+        mainEl.innerHTML = renderHomePage();
+      } else if (hash === '#/game-1') {
+        mainEl.innerHTML = renderGame1Page();
+        initGame1();
+      } else if (hash === '#/game-2') {
+        mainEl.innerHTML = renderGame2Page();
+        initGame2();
+      } else if (hash === '#/game-3') {
+        mainEl.innerHTML = renderGame3Page();
+        initGame3();
+      } else if (hash === '#/game-bonus') {
+        mainEl.innerHTML = renderGameBonusPage();
+        initGameBonus();
+      } else if (hash === '#/admin') {
+        mainEl.innerHTML = renderAdminPage();
+      } else {
+        window.location.hash = '#/';
+      }
+    }
+
+    window.addEventListener('hashchange', navigate);
+    window.addEventListener('DOMContentLoaded', navigate);
+  </script>
+</body>
+</html>

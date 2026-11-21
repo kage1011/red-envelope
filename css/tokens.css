@@ -1,0 +1,97 @@
+/* ==========================================================================
+   DESIGN TOKENS - TẾT ĐINH MÙI 2027 (STANDALONE OFFLINE)
+   Generated according to ui-ux-pro-max token architecture
+   ========================================================================== */
+
+:root {
+  /* 1. PRIMITIVE TOKENS */
+  --primitive-red-900: #450a0a;
+  --primitive-red-800: #7f1d1d;
+  --primitive-red-700: #991b1b;
+  --primitive-red-600: #b91c1c;
+  --primitive-red-500: #dc2626;
+  --primitive-red-400: #ef4444;
+
+  --primitive-gold-900: #78350f;
+  --primitive-gold-800: #92400e;
+  --primitive-gold-700: #b45309;
+  --primitive-gold-600: #d97706;
+  --primitive-gold-500: #f59e0b;
+  --primitive-gold-400: #fbbf24;
+  --primitive-gold-300: #fde047;
+  --primitive-gold-200: #fef08a;
+  --primitive-gold-100: #fffbeb;
+
+  --primitive-wine-950: #120004;
+  --primitive-wine-900: #1a0106;
+  --primitive-wine-800: #2d020d;
+
+  --primitive-jade-600: #059669;
+  --primitive-jade-500: #10b981;
+  --primitive-jade-400: #34d399;
+
+  /* 2. SEMANTIC TOKENS */
+  --color-primary: var(--primitive-red-600);
+  --color-primary-dark: var(--primitive-red-800);
+  --color-on-primary: #ffffff;
+
+  --color-accent: var(--primitive-gold-500);
+  --color-accent-bright: var(--primitive-gold-400);
+  --color-accent-light: var(--primitive-gold-200);
+  --color-on-accent: var(--primitive-red-900);
+
+  --color-background: var(--primitive-wine-900);
+  --color-surface: rgba(45, 3, 13, 0.85);
+  --color-surface-hover: rgba(75, 6, 22, 0.92);
+  --color-border: rgba(245, 158, 11, 0.38);
+  --color-border-glow: rgba(251, 191, 36, 0.65);
+
+  --color-text-main: var(--primitive-gold-100);
+  --color-text-muted: var(--primitive-gold-200);
+  --color-text-gold: var(--primitive-gold-300);
+
+  --color-destructive: var(--primitive-red-500);
+  --color-on-destructive: #ffffff;
+  --color-success: var(--primitive-jade-500);
+  --color-on-success: #ffffff;
+  --color-ring: var(--primitive-gold-400);
+
+  /* 3. SPACING SCALE (8pt Grid) */
+  --space-2xs: 2px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* 4. RADII */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* 5. ELEVATION SHADOWS */
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 6px 18px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 35px rgba(0, 0, 0, 0.7);
+  --shadow-gold: 0 0 25px rgba(245, 158, 11, 0.45);
+  --shadow-red: 0 0 25px rgba(220, 38, 38, 0.45);
+
+  /* 6. MOTION TIMING */
+  --motion-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-base: 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-slow: 380ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Hỗ trợ accessibility khi người dùng giảm chuyển động */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
